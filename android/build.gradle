@@ -35,11 +35,27 @@ apply plugin: "com.facebook.react"
 android {
   namespace "com.brotli"
 
+  ndkVersion "28.2.13676358"
+
   compileSdkVersion getExtOrDefault("compileSdkVersion")
 
   defaultConfig {
     minSdkVersion getExtOrDefault("minSdkVersion")
     targetSdkVersion getExtOrDefault("targetSdkVersion")
+
+    externalNativeBuild {
+      cmake {
+        cppFlags ""
+        abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+      }
+    }
+  }
+
+  externalNativeBuild {
+    cmake {
+      path "CMakeLists.txt"
+      version "3.22.1"
+    }
   }
 
   buildFeatures {
@@ -64,4 +80,6 @@ android {
 
 dependencies {
   implementation "com.facebook.react:react-android"
+  api "com.squareup.okhttp3:okhttp-brotli:4.12.0"
+  implementation "org.brotli:dec:0.1.2"
 }

@@ -17,7 +17,11 @@
     "lib",
     "android",
     "ios",
-    "cpp",
+    "cpp/brotli_jni.cpp",
+    "cpp/brotli/c/common/*.{c,h}",
+    "cpp/brotli/c/enc/*.{c,h}",
+    "cpp/brotli/c/include/brotli/*",
+    "cpp/brotli/LICENSE",
     "*.podspec",
     "react-native.config.js",
     "!ios/build",
@@ -36,7 +40,7 @@
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "typecheck": "tsc",
-    "lint": "eslint \"**/*.{js,ts,tsx}\""
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\""
   },
   "keywords": [
     "react-native",
@@ -45,14 +49,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nainglynn/react-native-brotli.git"
+    "url": "git+https://github.com/nainglynndw/react-native-brotli.git"
   },
-  "author": "Naing Lynn <nainglynn@example.com> (https://github.com/nainglynn)",
+  "author": "Naing Lynn <nainglynn.dw@gmail.com> (https://github.com/nainglynndw)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nainglynn/react-native-brotli/issues"
+    "url": "https://github.com/nainglynndw/react-native-brotli/issues"
   },
-  "homepage": "https://github.com/nainglynn/react-native-brotli#readme",
+  "homepage": "https://github.com/nainglynndw/react-native-brotli#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
